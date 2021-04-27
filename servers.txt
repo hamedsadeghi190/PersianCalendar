@@ -1,0 +1,12 @@
+Scaffold-DbContext "Server=185.79.156.187,1435;DataBase=SmartMontoringTest;UID=rasa;PWD=Tikro@9957;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models" -Context "SmartMonitoringContext"  -f
+======================================================
+
+
+
+      protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(connectionString, x => x.UseNetTopologySuite());
+            }
+        }
